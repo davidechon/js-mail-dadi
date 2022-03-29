@@ -39,28 +39,27 @@
 // userMail = prompt("Inserisci la tua mail");
 // console.log(userMail);
 
-// const app = document.getElementById('app');
-// const row = document.createElement('div');
-// app.append(row);
-// const col = document.createElement('div');
-// col.setAttribute('class', 'col-12 col-sm-6 col-md-4 col-lg-2');
-// col.append(userMail);
-// row.append(col);
+
 
 let userList = ['prima@mail.com', 'seconda@mail.com', 'terza@mail.com'];
 // B -->|if| C{La mail inserita è nella lista autorizzata ad accedere?}
-let userMail = prompt("Inserisci la tua mail");
-let trovata = false;
-let index;
-for (let i = 0; i < userList.length; i++){
-  if(userMail == userList[i]){
-    trovata = true;
-    index = i;
-    console.log(userList[index], "mail presente");
-  } else {
-     console.log("Dato non presente")
+// let userMail = prompt("Inserisci la tua mail");
+let userMail = document.getElementById('app')
+app.addEventListener("click", insertMail);
+function insertMail(){
+  let trovata = false;
+  let index;
+  for (let i = 0; i < userList.length; i++){
+    if(userMail == userList[i]){
+      trovata = true;
+      index = i;
+      console.log(userList[index], "mail presente");
+    } else {
+      console.log("Dato non presente")
+    }
   }
 }
+
 
 
 // for (let i = 0; i < userList.length; i++){
@@ -86,4 +85,19 @@ for (let i = 0; i < userList.length; i++){
 // F -->|no| H[Il vincitore è: Machina]
 // G & H --> Z[FINE]
 
-// let numRandom = Math.floor((Math.random() *6) + 1);
+document.getElementById("lancio").addEventListener("click", lancioFx);
+function lancioFx(){
+  let human = Math.floor((Math.random() *6) + 1);
+  let machina = Math.floor((Math.random() *6) + 1);
+  document.getElementById("Risultato").innerHTML = `<p>Giocatore: ${human}</p>`;
+  console.log(human);
+  document.getElementById("Risultato").innerHTML = `<p>Giocatore: ${machina}</p>`;
+  console.log(machina);
+  if(human > machina){
+    console.log(human, "ha vinto");
+  } else if (human > machina){
+    console.log(machina, "ha vinto");
+  } else {
+    console.log("Pareggio");
+  }
+}
