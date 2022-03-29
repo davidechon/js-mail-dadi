@@ -1,5 +1,6 @@
 // alert('Hello World!');
 
+// Primo Esercizio
 // %% Mail
 // %% Chiedi all’utente la sua email,
 // %% controlla che sia nella lista di chi può accedere,
@@ -15,6 +16,7 @@
 
 ///////////////////////////////////////////
 
+// Secondo Esercizio
 // %% Gioco dei dadi
 // %% Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 // %% Stabilire il vincitore, in base a chi fa il punteggio più alto.
@@ -27,3 +29,47 @@
 // F -->|si| G[Il vincitore è: Human]
 // F -->|no| H[Il vincitore è: Machina]
 // G & H --> Z[FINE]
+
+///////////////////////////////////////////
+
+// Primo Esercizio - Mail
+
+// A[INIZIO] -->|prompt| B[Chiedi all'utente la sua mail]
+// let userMail = 0;
+// userMail = prompt("Inserisci la tua mail");
+// console.log(userMail);
+
+// const app = document.getElementById('app');
+// const row = document.createElement('div');
+// app.append(row);
+// const col = document.createElement('div');
+// col.setAttribute('class', 'col-12 col-sm-6 col-md-4 col-lg-2');
+// col.append(userMail);
+// row.append(col);
+
+let userList = ['prima@mail.com', 'seconda@mail.com', 'terza@mail.com'];
+// B -->|if| C{La mail inserita è nella lista autorizzata ad accedere?}
+let userMail = prompt("Inserisci la tua mail");
+userList.push(userMail);
+let trovata = false;
+let index;
+// console.log(userList);
+for (let i = 0; i < userList.length; i++){
+  if (userList[i] === userMail) {
+    trovata = true;
+    index = i;
+    console.log('${userList[index]} è presente nei nostri sistemi.');
+  } else {
+    console.log("La userMail cercata non c'è");
+  }
+}
+
+
+
+
+
+
+// C -->|no| D[Utente non autorizzato]
+// D --> B
+// C -->|si| E[Msg di benvenuto]
+// E --> Z[FINE]
