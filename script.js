@@ -50,26 +50,39 @@
 let userList = ['prima@mail.com', 'seconda@mail.com', 'terza@mail.com'];
 // B -->|if| C{La mail inserita è nella lista autorizzata ad accedere?}
 let userMail = prompt("Inserisci la tua mail");
-userList.push(userMail);
 let trovata = false;
 let index;
-// console.log(userList);
 for (let i = 0; i < userList.length; i++){
-  if (userList[i] === userMail) {
+  if(userMail === userList[i]){
     trovata = true;
     index = i;
-    console.log('${userList[index]} è presente nei nostri sistemi.');
+    console.log(userList[index], "mail presente");
   } else {
-    console.log("La userMail cercata non c'è");
+     console.log("Dato non presente")
   }
 }
 
 
+// for (let i = 0; i < userList.length; i++){
+//   if (userList[i] === userMail) {
+//     trovata = true;
+//     index = i;
+//   }
+//   if (trovata){
+//     console.log('${userList[index]} è presente nei nostri sistemi.');
+//   } else {
+//     console.log("La userMail cercata non c'è");
+//   }
+// }
 
 
-
-
-// C -->|no| D[Utente non autorizzato]
-// D --> B
-// C -->|si| E[Msg di benvenuto]
-// E --> Z[FINE]
+//////////////////////
+// Secondo Esercizio - Dadi
+// A[INIZIO] -->|random| B[Genera num random da 1 a 6]
+// B -->|human| C[Il tuo lancio è: ]
+// B -->|machina| D[Il lancio della macchina è: ]
+// C & D --> F{C > D?}
+// F -->|si| G[Il vincitore è: Human]
+// F -->|no| H[Il vincitore è: Machina]
+// G & H --> Z[FINE]
+// let numRandom = Math.floor((Math.random() *6) + 1);
