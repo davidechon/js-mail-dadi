@@ -53,7 +53,7 @@ let userMail = prompt("Inserisci la tua mail");
 let trovata = false;
 let index;
 for (let i = 0; i < userList.length; i++){
-  if(userMail === userList[i]){
+  if(userMail == userList[i]){
     trovata = true;
     index = i;
     console.log(userList[index], "mail presente");
@@ -85,4 +85,5 @@ for (let i = 0; i < userList.length; i++){
 // F -->|si| G[Il vincitore è: Human]
 // F -->|no| H[Il vincitore è: Machina]
 // G & H --> Z[FINE]
+
 // let numRandom = Math.floor((Math.random() *6) + 1);
