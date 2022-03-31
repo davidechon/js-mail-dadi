@@ -43,36 +43,23 @@
 
 let userList = ['prima@mail.com', 'seconda@mail.com', 'terza@mail.com'];
 // B -->|if| C{La mail inserita è nella lista autorizzata ad accedere?}
-// let userMail = prompt("Inserisci la tua mail");
-let userMail = document.getElementById('app')
-app.addEventListener("click", insertMail);
+document.getElementById('btn-submit').addEventListener("click", insertMail);
+
 function insertMail(){
+  let userMail = document.getElementById("email").value
   let trovata = false;
   let index;
   for (let i = 0; i < userList.length; i++){
     if(userMail == userList[i]){
       trovata = true;
       index = i;
-      console.log(userList[index], "mail presente");
+      console.log("Bentornato ",userList[index]);
+      app.append=("Bentornato ",userList[index]);
     } else {
       console.log("Dato non presente")
     }
   }
 }
-
-
-
-// for (let i = 0; i < userList.length; i++){
-//   if (userList[i] === userMail) {
-//     trovata = true;
-//     index = i;
-//   }
-//   if (trovata){
-//     console.log('${userList[index]} è presente nei nostri sistemi.');
-//   } else {
-//     console.log("La userMail cercata non c'è");
-//   }
-// }
 
 
 //////////////////////
@@ -89,12 +76,12 @@ document.getElementById("lancio").addEventListener("click", lancioFx);
 function lancioFx(){
   let human = Math.floor((Math.random() *6) + 1);
   let machina = Math.floor((Math.random() *6) + 1);
-  document.getElementById("Risultato").innerHTML = `<p>Giocatore: ${human}</p>`;
+  document.getElementById("risultato").innerHTML = `<p>Giocatore Human: ${human}</p>`;
   console.log(human);
-  document.getElementById("Risultato").innerHTML = `<p>Giocatore: ${machina}</p>`;
+  document.getElementById("risultato").innerHTML = `<p>Giocatore Machina: ${machina}</p>`;
   console.log(machina);
   if(human > machina){
-    console.log(human, "ha vinto");
+    console.log("Il vincitore è: ", human);
   } else if (human > machina){
     console.log(machina, "ha vinto");
   } else {
